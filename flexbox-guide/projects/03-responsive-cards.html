@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project 3: Responsive Card Grid</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: Arial, sans-serif;
+      padding: 24px 16px;
+      background: #f3f4f6;
+      color: #1f2937;
+    }
+
+    h1 { text-align: center; margin-bottom: 24px; }
+
+    /* ---------- Flex Container ---------- */
+    .cards {
+      display: flex;
+      flex-wrap: wrap;                   /* jagah kam par agli line */
+      gap: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* ---------- Mobile First: 1 column (default) ---------- */
+    .card {
+      flex: 0 0 100%;                    /* grow 0, shrink 0, basis 100% */
+      display: flex;
+      flex-direction: column;            /* card ke andar bhi flexbox */
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .thumb { height: 110px; }
+    .c1 { background: #ef4444; } .c2 { background: #f59e0b; }
+    .c3 { background: #10b981; } .c4 { background: #3b82f6; }
+    .c5 { background: #8b5cf6; } .c6 { background: #ec4899; }
+    .c7 { background: #14b8a6; } .c8 { background: #f97316; }
+
+    .body {
+      display: flex;
+      flex-direction: column;
+      flex: 1;                           /* bachi hui height le lo */
+      padding: 16px;
+      gap: 8px;
+    }
+    .body p { color: #6b7280; font-size: 14px; }
+
+    .body a {
+      margin-top: auto;                  /* button hamesha card ke neeche */
+      padding: 8px 14px;
+      align-self: flex-start;
+      border-radius: 6px;
+      background: #4f46e5;
+      color: #fff;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    /* ---------- Tablet: 600px aur us se bari screen = 2 columns ---------- */
+    @media (min-width: 600px) {
+      .card { flex-basis: calc(50% - 10px); }     /* (100% - 1 gap) / 2 */
+    }
+
+    /* ---------- Desktop: 992px aur us se bari screen = 4 columns ---------- */
+    @media (min-width: 992px) {
+      .card { flex-basis: calc(25% - 15px); }     /* (100% - 3 gaps) / 4 */
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Our Courses</h1>
+
+  <div class="cards">
+    <article class="card"><div class="thumb c1"></div><div class="body"><h3>HTML</h3><p>Web page ka basic structure seekhein.</p><a href="#">Learn more</a></div></article>
+    <article class="card"><div class="thumb c2"></div><div class="body"><h3>CSS</h3><p>Websites ko design aur styling dein. Selectors, box model aur position.</p><a href="#">Learn more</a></div></article>
+    <article class="card"><div class="thumb c3"></div><div class="body"><h3>Flexbox</h3><p>Layouts banayein.</p><a href="#">Learn more</a></div></article>
+    <article class="card"><div class="thumb c4"></div><div class="body"><h3>JavaScript</h3><p>Website ko interactive banayein aur logic likhein.</p><a href="#">Learn more</a></div></article>
+    <article class="card"><div class="thumb c5"></div><div class="body"><h3>Git &amp; GitHub</h3><p>Apna code mehfooz karein.</p><a href="#">Learn more</a></div></article>
+    <article class="card"><div class="thumb c6"></div><div class="body"><h3>Responsive Design</h3><p>Har screen par website sahi nazar aaye. Media queries aur breakpoints.</p><a href="#">Learn more</a></div></article>
+    <article class="card"><div class="thumb c7"></div><div class="body"><h3>Python</h3><p>Programming ki shuruaat.</p><a href="#">Learn more</a></div></article>
+    <article class="card"><div class="thumb c8"></div><div class="body"><h3>SQL</h3><p>Database se data nikalna seekhein.</p><a href="#">Learn more</a></div></article>
+  </div>
+
+</body>
+</html>

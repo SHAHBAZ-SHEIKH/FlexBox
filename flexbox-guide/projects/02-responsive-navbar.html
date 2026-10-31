@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project 2: Responsive Navbar</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body { font-family: Arial, sans-serif; color: #1f2937; }
+
+    /* ---------- Navbar (Desktop First: row layout) ---------- */
+    .navbar {
+      display: flex;
+      justify-content: space-between;    /* logo left, menu right */
+      align-items: center;
+      padding: 14px 28px;
+      background: #1e293b;
+      color: #fff;
+    }
+
+    .logo { font-size: 22px; font-weight: bold; }
+
+    .menu {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+    }
+    .menu a {
+      color: #cbd5e1;
+      text-decoration: none;
+    }
+    .menu a:hover { color: #fff; }
+
+    .btn {
+      padding: 8px 18px;
+      border-radius: 6px;
+      background: #6366f1;
+      color: #fff;
+      text-decoration: none;
+    }
+
+    /* ---------- Hero ---------- */
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      min-height: 300px;
+      padding: 24px;
+      text-align: center;
+      background: #eef2ff;
+    }
+    .hero h1 { font-size: 36px; }
+    .hero p  { max-width: 520px; color: #4b5563; }
+
+    /* ---------- Tablet aur chhoti screen: 768px ya us se kam ---------- */
+    @media (max-width: 768px) {
+      .navbar {
+        flex-direction: column;          /* logo upar, menu neeche */
+        gap: 12px;
+      }
+      .menu {
+        flex-wrap: wrap;                 /* jagah kam ho to agli line */
+        justify-content: center;
+        gap: 14px 20px;
+      }
+      .hero h1 { font-size: 26px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="logo">MySchool</div>
+
+    <ul class="menu">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Courses</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+
+    <a href="#" class="btn">Apply Now</a>
+  </header>
+
+  <section class="hero">
+    <h1>Seekhna Ab Aasan Hai</h1>
+    <p>Flexbox aur media queries ke sath apni website ko har screen par khoobsurat banayein.</p>
+  </section>
+
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project 1: Centered Login Card</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: Arial, sans-serif;
+      min-height: 100vh;                 /* poori screen ki height */
+      display: flex;                     /* Flex Container */
+      justify-content: center;           /* horizontal center (main axis) */
+      align-items: center;               /* vertical center (cross axis) */
+      padding: 16px;
+      background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    }
+
+    .card {
+      width: 100%;
+      max-width: 380px;
+      padding: 32px;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .card h1 { margin-bottom: 4px; }
+    .card p.sub { color: #6b7280; margin-bottom: 20px; }
+
+    form {
+      display: flex;
+      flex-direction: column;            /* fields ek ke neeche ek */
+      gap: 14px;                         /* fields ke darmiyan faasla */
+    }
+
+    label {
+      display: flex;
+      flex-direction: column;            /* label upar, input neeche */
+      gap: 6px;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    input[type="email"], input[type="password"] {
+      padding: 10px 12px;
+      border: 1px solid #d1d5db;
+      border-radius: 6px;
+      font-size: 15px;
+    }
+
+    .options {
+      display: flex;
+      justify-content: space-between;    /* ek left, doosra right */
+      align-items: center;
+      font-size: 14px;
+    }
+    .options a { color: #4f46e5; text-decoration: none; }
+
+    .remember {
+      display: flex;
+      align-items: center;               /* checkbox aur text barabar */
+      gap: 6px;
+      font-weight: normal;
+      flex-direction: row;
+    }
+
+    button {
+      padding: 12px;
+      border: none;
+      border-radius: 6px;
+      background: #4f46e5;
+      color: #fff;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    button:hover { background: #4338ca; }
+
+    /* Chhoti screen (mobile) */
+    @media (max-width: 480px) {
+      .card { padding: 22px; }
+      .options { flex-direction: column; align-items: flex-start; gap: 10px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h1>Welcome Back</h1>
+    <p class="sub">Apne account mein login karein</p>
+
+    <form>
+      <label>
+        Email
+        <input type="email" placeholder="ayesha@example.com">
+      </label>
+
+      <label>
+        Password
+        <input type="password" placeholder="********">
+      </label>
+
+      <div class="options">
+        <label class="remember"><input type="checkbox"> Remember me</label>
+        <a href="#">Forgot password?</a>
+      </div>
+
+      <button type="submit">Login</button>
+    </form>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project 4: Full Page Layout (Sidebar + Sticky Footer)</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: Arial, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;            /* header, content, footer ek ke neeche */
+      color: #1f2937;
+    }
+
+    header, footer {
+      padding: 16px 24px;
+      background: #1e293b;
+      color: #fff;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    /* ---------- Beech ka hissa: sidebar + main ---------- */
+    .layout {
+      flex: 1;                           /* bachi hui poori height le lo (sticky footer) */
+      display: flex;                     /* sidebar aur main ek row mein */
+      gap: 20px;
+      padding: 20px;
+      background: #f3f4f6;
+    }
+
+    aside {
+      flex: 0 0 220px;                   /* sidebar ki fixed width 220px */
+      padding: 18px;
+      background: #e0e7ff;
+      border-radius: 8px;
+    }
+    aside ul { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-top: 10px; }
+
+    main {
+      flex: 1;                           /* baaki saari width */
+      padding: 18px;
+      background: #fff;
+      border-radius: 8px;
+    }
+    main h2 { margin-bottom: 10px; }
+    main p  { margin-bottom: 10px; line-height: 1.6; color: #4b5563; }
+
+    footer { text-align: center; }
+
+    /* ---------- Mobile: 768px ya us se kam ---------- */
+    @media (max-width: 768px) {
+      .layout { flex-direction: column; }         /* sidebar aur main ek ke neeche */
+      aside   { flex: 0 0 auto; order: 2; }       /* sidebar ab main ke BAAD aayega */
+      main    { order: 1; }
+      header  { flex-direction: column; gap: 6px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <strong>My Dashboard</strong>
+    <span>Welcome, Ayesha</span>
+  </header>
+
+  <div class="layout">
+    <aside>
+      <h3>Menu</h3>
+      <ul>
+        <li>Home</li>
+        <li>Courses</li>
+        <li>Results</li>
+        <li>Settings</li>
+      </ul>
+    </aside>
+
+    <main>
+      <h2>Main Content</h2>
+      <p>Yeh page flexbox ke sath banaya gaya hai. Body ek column flex container hai, aur layout wale hisse par flex: 1 laga hai, is liye footer hamesha screen ke neeche rehta hai, chahe content kitna hi kam ho.</p>
+      <p>Browser ki width 768px se kam karein. Sidebar content ke neeche chala jayega, kyunke media query ne flex-direction ko column aur order ko badal diya hai.</p>
+    </main>
+  </div>
+
+  <footer>&copy; 2026 My School. All rights reserved.</footer>
+
+</body>
+</html>
